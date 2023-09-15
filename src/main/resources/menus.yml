@@ -1,0 +1,13 @@
+# Main menu
+main:
+  size: 27
+  name: "Pets"
+  items:
+    pet_storage:
+      slot: 10
+      material: ""
+      name: "&eYour pets"
+      lore:
+        - ""
+        - " &7Click to view your pets"
+        - ""

@@ -1,0 +1,4 @@
+# Storage
+storage:
+  # VitalCore Database Identifier
+  database-identifier: ""

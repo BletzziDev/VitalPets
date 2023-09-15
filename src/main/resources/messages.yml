@@ -1,0 +1,9 @@
+no_permission: "&cYou can't use this command :c"
+pet_admin_help:
+  - "&e&lPETS"
+  - ""
+  - "&b/pet &77l- &fOpens pet main menu"
+  - "&b/pet givepet <player> <type> &7&l- &fGive player a pet"
+  - "&b/pet givecandy <player> <type> <amount> &7&l- &fGive player a candy"
+  - "&b/pet givebox <player> <type> <amount> &7&l- &fGive player a box"
+  - "&b/pet addslot <player> <amount> &7&l- &fGive player a additional pet slot"

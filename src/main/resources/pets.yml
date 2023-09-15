@@ -1,0 +1,37 @@
+pets:
+  tiger:
+    # Custom Model Name
+    custom_model: ""
+    # Name
+    name: "&bMining Tiger"
+    # Display Icon
+    display:
+      # Display material
+      material: ""
+      # Display name
+      name: "&bMining Tiger"
+      # Display lore
+      lore:
+        - ""
+        - " &eThis pet give you &b+15% &emining bonus."
+        - ""
+    # Pet Rarity
+    rarity: "common"
+    # Super Powers
+    powers:
+      tokens:
+        # Power Type
+        type: "CURRENCIES:TOKENS"
+        # Percentage
+        percentage: 15.0
+    # Upgrades
+    upgrades:
+      level2:
+        # Bonus to be added to the percentage of powers
+        bonus: 1.0
+      level3:
+        # Bonus to be added to the percentage of powers
+        bonus: 2.0
+      level4:
+        # Bonus to be added to the percentage of powers
+        bonus: 5.0

@@ -1,0 +1,13 @@
+candies:
+  carrot:
+    # Candy material
+    material: ""
+    # Candy name
+    name: "&aCarrot Candy"
+    # Candy lore
+    lore:
+      - ""
+      - " &eThis candy give your pet &a+1 level&e."
+      - ""
+    # Levels amount
+    levels: 1

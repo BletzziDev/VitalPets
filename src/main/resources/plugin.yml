@@ -1,0 +1,13 @@
+name: VitalPets
+version: '${project.version}'
+main: com.nasquicode.vitalpets.Terminal
+api-version: 1.19
+authors: [Bletzzi]
+description: VitalMC Pet System
+website: nasquicode.com
+depend:
+  - VitalCore
+commands:
+  pet:
+    aliases: [pets,vitalpet,vitalpets]
+  boxes:

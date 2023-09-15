@@ -1,0 +1,13 @@
+boxes:
+  common:
+    # Material
+    material: ""
+    # Display name
+    name: "&7Common"
+    # Display lore
+    lore:
+      - ""
+      - " &eIn this pet box you can get a &7Common&e pet."
+      - ""
+    # Pets that can be earned in the box
+    pets: [ "tiger" ]
