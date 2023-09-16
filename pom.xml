@@ -91,6 +91,13 @@
             <systemPath>C:\Users\Rodrigo\vitalmc\assets\EdPrison4.6-HOTFIX2.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>org.vault</groupId>
+            <artifactId>vault</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:\Users\Rodrigo\vitalmc\assets\Vault.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.28</version>

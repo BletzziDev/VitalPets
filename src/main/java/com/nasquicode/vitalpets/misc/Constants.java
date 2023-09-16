@@ -6,6 +6,6 @@ public class Constants {
     public static String petFile = "pets.yml";
     public static String rarityFile = "rarities.yml";
     public static String candyFile = "candies.yml";
-    public static String boxeFile = "boxes.yml";
+    public static String boxFile = "boxes.yml";
     public static String menuFile = "menus.yml";
 }

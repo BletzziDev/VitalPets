@@ -24,14 +24,20 @@ pets:
         type: "CURRENCIES:TOKENS"
         # Percentage
         percentage: 15.0
-    # Upgrades
-    upgrades:
-      level2:
+    # Levels (Progressive order - Start in 2)
+    levels:
+      2:
+        # Blocks needed
+        blocks: 15000.0
         # Bonus to be added to the percentage of powers
         bonus: 1.0
-      level3:
+      3:
+        # Blocks needed
+        blocks: 30000.0
         # Bonus to be added to the percentage of powers
         bonus: 2.0
-      level4:
+      4:
+        # Blocks needed
+        blocks: 50000.0
         # Bonus to be added to the percentage of powers
         bonus: 5.0

@@ -12,5 +12,5 @@ public class PetBox {
     private ItemStack stack;
     private String name;
     private List<String> lore;
-    private List<String> rewards; // Change this to pet type object instead string
+    private List<PetType> rewards;
 }

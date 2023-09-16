@@ -1,5 +1,12 @@
 package com.nasquicode.vitalpets.objects;
 
-public class PetPower {
+import com.nasquicode.vitalpets.enums.PowerType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@AllArgsConstructor @Getter
+public class PetPower {
+    private String key;
+    private PowerType type;
+    private Double percentage;
 }

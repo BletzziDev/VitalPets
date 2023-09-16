@@ -7,6 +7,7 @@ description: VitalMC Pet System
 website: nasquicode.com
 depend:
   - VitalCore
+  - Vault
 commands:
   pet:
     aliases: [pets,vitalpet,vitalpets]

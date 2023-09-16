@@ -7,5 +7,5 @@ import java.util.HashMap;
 
 public class PlayerDataMapper {
     @Getter
-    private static HashMap<String, PlayerData> playerData = new HashMap<>();
+    private static HashMap<String, PlayerData> mapper = new HashMap<>();
 }
