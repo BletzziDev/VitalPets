@@ -19,7 +19,7 @@ public class PetDAO {
     private Connection connection;
     public void setup() {
         try {
-            PreparedStatement stmt = connection.prepareStatement("CREATE IF NOT EXISTS TABLE `vitalpets_players` (`key` VARCHAR(16) NOT NULL , `pet_slots` INT NOT NULL DEFAULT '1' , `pets` TEXT NOT NULL DEFAULT 'none' , `active_pets` VARCHAR(255) NOT NULL DEFAULT 'none' , PRIMARY KEY (`key`)) ENGINE = InnoDB;");
+            PreparedStatement stmt = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `vitalpets_players` (`key` VARCHAR(16) NOT NULL , `pet_slots` INT NOT NULL DEFAULT '1' , `pets` TEXT NOT NULL DEFAULT 'none' , `active_pets` VARCHAR(255) NOT NULL DEFAULT 'none' , PRIMARY KEY (`key`)) ENGINE = InnoDB;");
             stmt.execute();
         } catch (SQLException x) {
             throw new RuntimeException(x);
@@ -42,27 +42,31 @@ public class PetDAO {
             ResultSet rs = stmt.getResultSet();
             rs.next();
             List<Pet> playerPets = new ArrayList<>();
-            String[] pets_data = rs.getString("pets").split("\\|");
-            // Storage format: "pet_type_name,level,block_progress" Divisor: "|"
-            for(String key : pets_data) {
-                String[] pet_data = key.split(",");
-                Pet pet = new Pet(
-                        PetTypeMapper.getMapper().get(pet_data[0]),
-                        player,
-                        Integer.parseInt(pet_data[1]),
-                        Double.parseDouble(pet_data[2])
-                );
-                playerPets.add(pet);
+            if(!rs.getString("pets").equalsIgnoreCase("none")) {
+                String[] pets_data = rs.getString("pets").split("\\|");
+                // Storage format: "pet_type_name,level,block_progress" Divisor: "|"
+                for(String key : pets_data) {
+                    String[] pet_data = key.split(",");
+                    Pet pet = new Pet(
+                            PetTypeMapper.getMapper().get(pet_data[0]),
+                            player,
+                            Integer.parseInt(pet_data[1]),
+                            Double.parseDouble(pet_data[2])
+                    );
+                    playerPets.add(pet);
+                }
             }
             HashMap<Integer, Pet> active_pets = new HashMap<>();
-            String[] active_pets_data = rs.getString("active_pets").split("\\|");
-            // Format: "active_pet_slot,active_pet_type_name" Divisor: "|"
-            for(String key : active_pets_data) {
-                String[] active_pet_data = key.split(",");
-                for(Pet pet : playerPets) {
-                    if(pet.getPetType().getKey().equalsIgnoreCase(active_pet_data[1])) {
-                        active_pets.put(Integer.parseInt(active_pet_data[0]), pet);
-                        break;
+            if(!rs.getString("active_pets").equalsIgnoreCase("none")) {
+                String[] active_pets_data = rs.getString("active_pets").split("\\|");
+                // Format: "active_pet_slot,active_pet_type_name" Divisor: "|"
+                for(String key : active_pets_data) {
+                    String[] active_pet_data = key.split(",");
+                    for(Pet pet : playerPets) {
+                        if(pet.getPetType().getKey().equalsIgnoreCase(active_pet_data[1])) {
+                            active_pets.put(Integer.parseInt(active_pet_data[0]), pet);
+                            break;
+                        }
                     }
                 }
             }

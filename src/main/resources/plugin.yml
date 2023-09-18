@@ -12,3 +12,4 @@ commands:
   pet:
     aliases: [pets,vitalpet,vitalpets]
   boxes:
+  candies:

@@ -5,7 +5,7 @@ main:
   items:
     pet_storage:
       slot: 10
-      material: ""
+      material: "http://textures.minecraft.net/texture/bdfcee8306e0434a747710e2bdc2558c5a222e9b693477909f10d6cc220f6764"
       name: "&eYour pets"
       lore:
         - ""
@@ -15,3 +15,28 @@ pet_storage:
   size: 54
   name: "Pet Storage"
   pet_slots: [10,11,12,13,14,15,16,19,20,21,22,23,24,25]
+  items:
+    no_pet_available:
+      slot: 22
+      material: "BARRIER:0"
+      name: "&cYou don't have any pet :c"
+      lore:
+        - ""
+        - " &eOpen boxes to earn pets!"
+        - ""
+    equip_pet_lore:
+      - ""
+      - " &fLevel: &b{level}"
+      - " &fProgress: &b{block_progress}/{block_goal}"
+      - ""
+      - " &7Left click to equip your pet in first slot."
+      - " &7Right click to equip your pet in second slot."
+      - " &7Press Q to equip your pet in third slot."
+      - ""
+    equipped_pet_lore:
+      - ""
+      - " &fLevel: &b{level}"
+      - " &fProgress: &b{block_progress}/{block_goal}"
+      - ""
+      - " &aThis pet is already equipped!"
+      - ""

@@ -5,6 +5,7 @@ import com.nasquicode.vitalcore.bukkit.objects.Database;
 import com.nasquicode.vitalcore.bukkit.utils.CustomFileConfiguration;
 import com.nasquicode.vitalpets.commands.PetCommand;
 import com.nasquicode.vitalpets.database.PetDAO;
+import com.nasquicode.vitalpets.listeners.InventoryInteractionListener;
 import com.nasquicode.vitalpets.listeners.PlayerConnectionListener;
 import com.nasquicode.vitalpets.mappers.BoxMapper;
 import com.nasquicode.vitalpets.mappers.CandyMapper;
@@ -66,7 +67,7 @@ public final class Terminal extends JavaPlugin {
         }
         database = coreApi.getDatabase(config.getString("storage.database-identifier"));
         dao = new PetDAO(database.getConnection());
-        //dao.setup();
+        dao.setup();
         Console.log(String.format("&eDatabase &b%s &ehas been hooked.", database.getInfo().getKEY()));
 
         Console.log("&eLoading plugin objects...");
@@ -80,9 +81,14 @@ public final class Terminal extends JavaPlugin {
         Console.log(String.format("&b%s &eboxes has been loaded.", String.valueOf(BoxMapper.getMapper().size())));
         Console.log("&aAll plugin objects has been loaded.");
 
+        Constants.inventoryNames.clear();
+        Constants.inventoryNames.add(menuFile.getString("main.name"));
+        Constants.inventoryNames.add(menuFile.getString("pet_storage.name"));
+
         Console.log("&eRegistering commands and listeners...");
         getCommand("pet").setExecutor(new PetCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionListener(), this);
+        Bukkit.getPluginManager().registerEvents(new InventoryInteractionListener(), this);
         Console.log("&aAll commands and listeners has been registered.");
 
         Console.log("&aThe plugin started successfully!");

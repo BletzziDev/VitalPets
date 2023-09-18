@@ -7,7 +7,7 @@ pets:
     # Display Icon
     display:
       # Display material
-      material: ""
+      material: "http://textures.minecraft.net/texture/9095fcc1e3d7cbd350f19b389498ab8bb96c65ad185d34592067a7d033ac48de"
       # Display name
       name: "&bMining Tiger"
       # Display lore
