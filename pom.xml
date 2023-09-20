@@ -103,6 +103,13 @@
             <systemPath>C:\Users\Rodrigo\vitalmc\assets\Vault.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>net.advancedplugins</groupId>
+            <artifactId>advancedpets</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:\Users\Rodrigo\vitalmc\assets\AdvancedMobs-1.6.4.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.28</version>

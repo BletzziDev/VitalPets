@@ -1,6 +1,7 @@
 package com.nasquicode.vitalpets.commands;
 
 import com.nasquicode.vitalcore.bukkit.utils.Color;
+import com.nasquicode.vitalcore.bukkit.utils.Console;
 import com.nasquicode.vitalpets.Terminal;
 import com.nasquicode.vitalpets.mappers.CandyMapper;
 import com.nasquicode.vitalpets.mappers.PetTypeMapper;
@@ -9,6 +10,7 @@ import com.nasquicode.vitalpets.menus.MainMenu;
 import com.nasquicode.vitalpets.objects.Candy;
 import com.nasquicode.vitalpets.objects.Pet;
 import com.nasquicode.vitalpets.objects.PetType;
+import net.advancedplugins.mobs.impl.customMobs.entityInstance.CustomEntityInstance;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -109,7 +111,17 @@ public class PetCommand implements CommandExecutor {
             }
 
             player.getInventory().addItem(candy.getStack());
-            Bukkit.getConsoleSender().sendMessage(" sdfoi sdfoid");
+            Bukkit.getConsoleSender().sendMessage(Color.string(Terminal.messageFile.getString("candy_give_success")));
+        }
+
+        if(args[0].equalsIgnoreCase("test")) {
+            if(args.length == 2)  {
+                Player player = (Player) sender;
+                CustomEntityInstance mob = new CustomEntityInstance(args[1]);
+                mob.spawn(player.getLocation());
+                mob.getBaseEntity().setAI(true);
+            }
+
         }
 
         return false;

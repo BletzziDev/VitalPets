@@ -6,6 +6,7 @@ import com.nasquicode.vitalpets.Terminal;
 import com.nasquicode.vitalpets.objects.Candy;
 import de.tr7zw.nbtapi.NBTItem;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -24,7 +25,7 @@ public class CandyMapper {
                     Color.list(Terminal.candyFile.getStringList(String.format("candies.%s.lore", key))),
                     Terminal.candyFile.getInt(String.format("candies.%s.levels", key))
             );
-            ItemStack stack = candy.getStack();
+            ItemStack stack = candy.getDisplayStack();
             ItemMeta meta = stack.getItemMeta();
             meta.setDisplayName(candy.getName());
             meta.setLore(candy.getLore());
