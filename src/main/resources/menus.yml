@@ -39,4 +39,5 @@ pet_storage:
       - " &fProgress: &b{block_progress}/{block_goal}"
       - ""
       - " &aThis pet is already equipped!"
+      - " &7Left click to unequip"
       - ""

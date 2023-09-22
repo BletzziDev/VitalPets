@@ -3,6 +3,7 @@ package com.nasquicode.vitalpets.database;
 import com.nasquicode.vitalpets.mappers.PetTypeMapper;
 import com.nasquicode.vitalpets.objects.Pet;
 import com.nasquicode.vitalpets.objects.PlayerData;
+import com.nasquicode.vitalpets.utils.Console;
 import lombok.AllArgsConstructor;
 import org.bukkit.entity.Player;
 
@@ -56,7 +57,7 @@ public class PetDAO {
                     playerPets.add(pet);
                 }
             }
-            HashMap<Integer, Pet> active_pets = new HashMap<>();
+            HashMap<Integer, String> active_pets = new HashMap<>();
             if(!rs.getString("active_pets").equalsIgnoreCase("none")) {
                 String[] active_pets_data = rs.getString("active_pets").split("\\|");
                 // Format: "active_pet_slot,active_pet_type_name" Divisor: "|"
@@ -64,7 +65,7 @@ public class PetDAO {
                     String[] active_pet_data = key.split(",");
                     for(Pet pet : playerPets) {
                         if(pet.getPetType().getKey().equalsIgnoreCase(active_pet_data[1])) {
-                            active_pets.put(Integer.parseInt(active_pet_data[0]), pet);
+                            active_pets.put(Integer.parseInt(active_pet_data[0]), pet.getPetType().getKey());
                             break;
                         }
                     }

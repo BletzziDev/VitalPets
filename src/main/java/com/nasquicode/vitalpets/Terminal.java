@@ -7,11 +7,11 @@ import com.nasquicode.vitalpets.commands.PetCommand;
 import com.nasquicode.vitalpets.database.PetDAO;
 import com.nasquicode.vitalpets.listeners.InventoryInteractionListener;
 import com.nasquicode.vitalpets.listeners.PlayerConnectionListener;
-import com.nasquicode.vitalpets.mappers.BoxMapper;
-import com.nasquicode.vitalpets.mappers.CandyMapper;
-import com.nasquicode.vitalpets.mappers.PetTypeMapper;
-import com.nasquicode.vitalpets.mappers.RarityMapper;
+import com.nasquicode.vitalpets.mappers.*;
 import com.nasquicode.vitalpets.misc.Constants;
+import com.nasquicode.vitalpets.objects.Pet;
+import com.nasquicode.vitalpets.objects.PlayerData;
+import com.nasquicode.vitalpets.tasks.PetTeleportTask;
 import com.nasquicode.vitalpets.utils.Console;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -90,6 +90,8 @@ public final class Terminal extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryInteractionListener(), this);
         Console.log("&aAll commands and listeners has been registered.");
+
+        new PetTeleportTask().runTaskTimer(this, 100L, 100L);
 
         Console.log("&aThe plugin started successfully!");
     }

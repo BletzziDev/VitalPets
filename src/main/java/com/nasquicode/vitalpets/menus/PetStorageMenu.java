@@ -6,6 +6,7 @@ import com.nasquicode.vitalpets.Terminal;
 import com.nasquicode.vitalpets.mappers.PlayerDataMapper;
 import com.nasquicode.vitalpets.objects.Pet;
 import com.nasquicode.vitalpets.objects.PlayerData;
+import com.nasquicode.vitalpets.utils.Console;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -29,15 +30,17 @@ public class PetStorageMenu {
                 meta.setDisplayName(pet.getPetType().getName());
 
                 if(playerData.getEquippedPetsStringList().contains(pet.getPetType().getKey())) {
+                    Console.log("PetStorageMenu.java Debug 1");
                     List<String> lore = Color.list(Terminal.menuFile.getStringList("pet_storage.items.equipped_pet_lore"));
                     for(int i=0;i<lore.size();i++) {
-                        lore.set(i,lore.get(i).replace("{level}",String.valueOf(pet.getLevel())).replace("{block_progress}",String.valueOf(pet.getBlocks_progress())).replace("{block_goal}",String.valueOf(pet.getPetType().getLevels().get(pet.getLevel()).getBlocks())));
+                        lore.set(i,lore.get(i).replace("{level}",String.valueOf(pet.getLevel())).replace("{block_progress}",String.valueOf(pet.getBlocks_progress())).replace("{block_goal}",String.valueOf(pet.getPetType().getLevels().get(pet.getLevel()+1).getBlocks())));
                     }
                     meta.setLore(lore);
                 }else {
+                    Console.log("PetStorageMenu.java Debug 2");
                     List<String> lore = Color.list(Terminal.menuFile.getStringList("pet_storage.items.equip_pet_lore"));
                     for(int i=0;i<lore.size();i++) {
-                        lore.set(i,lore.get(i).replace("{level}",String.valueOf(pet.getLevel())).replace("{block_progress}",String.valueOf(pet.getBlocks_progress())).replace("{block_goal}",String.valueOf(pet.getBlocks_progress())));
+                        lore.set(i,lore.get(i).replace("{level}",String.valueOf(pet.getLevel())).replace("{block_progress}",String.valueOf(pet.getBlocks_progress())).replace("{block_goal}",String.valueOf(pet.getPetType().getLevels().get(pet.getLevel()+1).getBlocks())));
                     }
                     meta.setLore(lore);
                 }
