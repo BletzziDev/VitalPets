@@ -5,6 +5,7 @@ import com.nasquicode.vitalcore.bukkit.objects.Database;
 import com.nasquicode.vitalcore.bukkit.utils.CustomFileConfiguration;
 import com.nasquicode.vitalpets.commands.PetCommand;
 import com.nasquicode.vitalpets.database.PetDAO;
+import com.nasquicode.vitalpets.listeners.CurrencyIncomeListener;
 import com.nasquicode.vitalpets.listeners.InventoryInteractionListener;
 import com.nasquicode.vitalpets.listeners.PlayerConnectionListener;
 import com.nasquicode.vitalpets.mappers.*;
@@ -89,10 +90,10 @@ public final class Terminal extends JavaPlugin {
         getCommand("pet").setExecutor(new PetCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryInteractionListener(), this);
+        Bukkit.getPluginManager().registerEvents(new CurrencyIncomeListener(), this);
         Console.log("&aAll commands and listeners has been registered.");
 
         new PetTeleportTask().runTaskTimer(this, 100L, 100L);
-
         Console.log("&aThe plugin started successfully!");
     }
 

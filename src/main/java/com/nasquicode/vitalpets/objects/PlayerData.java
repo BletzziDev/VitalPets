@@ -1,7 +1,7 @@
 package com.nasquicode.vitalpets.objects;
 
+import com.nasquicode.vitalpets.api.EdPrisonAPI;
 import com.nasquicode.vitalpets.utils.Console;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.entity.Player;
@@ -10,13 +10,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@AllArgsConstructor @Getter
+@Getter
 public class PlayerData {
     private Player player;
     @Setter
     private int petSlots;
     private HashMap<Integer, String> active_pets;
     private List<Pet> pets;
+    private HashMap<String, Double> multipliers = new HashMap<>();
+
+    public PlayerData(Player player, Integer petSlots, HashMap<Integer, String> activePets, List<Pet> pets) {
+        this.player = player;
+        this.petSlots = petSlots;
+        this.active_pets = activePets;
+        this.pets = pets;
+    }
 
     public String getSerializedActivePetsData() {
         if(active_pets.size() == 0) return "none";

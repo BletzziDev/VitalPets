@@ -4,9 +4,11 @@ import com.nasquicode.vitalpets.Terminal;
 import com.nasquicode.vitalpets.mappers.PlayerDataMapper;
 import com.nasquicode.vitalpets.objects.Pet;
 import com.nasquicode.vitalpets.objects.PlayerData;
+import com.nasquicode.vitalpets.utils.Console;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.*;
+import org.bukkit.event.server.TabCompleteEvent;
 
 public class PlayerConnectionListener implements Listener {
     @EventHandler

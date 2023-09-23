@@ -8,6 +8,7 @@ import com.nasquicode.vitalpets.menus.PetStorageMenu;
 import com.nasquicode.vitalpets.misc.Constants;
 import com.nasquicode.vitalpets.objects.Pet;
 import com.nasquicode.vitalpets.objects.PlayerData;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -79,6 +80,9 @@ public class InventoryInteractionListener implements Listener {
                 }
                 player.sendMessage(Color.string(Terminal.messageFile.getString("insufficient_slots")));
                 player.closeInventory();
+                Bukkit.getConsoleSender().sendMessage(" wdfsd fsdfsdfsdf");
+                Bukkit.getConsoleSender().sendMessage(" sdfsd fsdffd");
+                Console.log(" sdfsdfsd adsasd");
                 return;
             }
             return;
