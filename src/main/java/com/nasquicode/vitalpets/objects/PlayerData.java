@@ -1,6 +1,7 @@
 package com.nasquicode.vitalpets.objects;
 
 import com.nasquicode.vitalpets.api.EdPrisonAPI;
+import com.nasquicode.vitalpets.enums.PowerType;
 import com.nasquicode.vitalpets.utils.Console;
 import lombok.Getter;
 import lombok.Setter;
@@ -58,7 +59,7 @@ public class PlayerData {
         for(int i=0;i<pets.size();i++) {
             if(pets.get(i).getPetType().getKey().equalsIgnoreCase(petKey)) {
                 if(getEquippedPetsStringList().contains(pets.get(i).getPetType().getKey())) {
-                    pets.get(i).remove();
+                    unequipePet(pets.get(i));
                 }
                 pets.remove(i);
             }
@@ -84,13 +85,10 @@ public class PlayerData {
         return null;
     }
     public void unequipePet(Pet pet) {
-        Console.log(String.format("Valor init: %s", String.valueOf(active_pets.size())));
         int size = active_pets.size();
         for(int i=1;i<4;i++) {
-            Console.log(String.format("PlayerData.java debug 1 | Slot: %s", String.valueOf(i)));
             if(!active_pets.containsKey(i)) continue;
             if(active_pets.get(i).equalsIgnoreCase(pet.getPetType().getKey())) {
-                Console.log(String.format("PlayerData.java debug 2 | Slot: %s", String.valueOf(i)));
                 pet.remove();
                 active_pets.remove(i);
                 break;
@@ -104,6 +102,20 @@ public class PlayerData {
             }
             active_pets.put(slot, pet.getPetType().getKey());
             pet.spawn();
+            for(PetPower power : pet.getPetType().getPowers()) {
+                if(power.getType() == PowerType.EDP_CURRENCIES_CRYSTAL) {
+                    multipliers.put("crystals", multipliers.get("crystals")+power.getPercentage());
+                    continue;
+                }
+                if(power.getType() == PowerType.EDP_CURRENCIES_GEMS) {
+                    multipliers.put("gems", multipliers.get("gems")+power.getPercentage());
+                    continue;
+                }
+                if(power.getType() == PowerType.EDP_CURRENCIES_TOKENS) {
+                    multipliers.put("tokens", multipliers.get("tokens")+power.getPercentage());
+                    continue;
+                }
+            }
             return true;
         }
         return false;

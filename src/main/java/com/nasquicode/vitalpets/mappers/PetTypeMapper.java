@@ -29,7 +29,7 @@ public class PetTypeMapper {
             for(String level : Terminal.petFile.getConfigurationSection(String.format("pets.%s.levels", key)).getKeys(false)) {
                 PetLevel petLevel = new PetLevel(
                         Integer.parseInt(level),
-                        Terminal.petFile.getDouble(String.format("pets.%s.levels.%s.blocks", key, level)),
+                        Terminal.petFile.getDouble(String.format("pets.%s.levels.%s.price", key, level)),
                         Terminal.petFile.getDouble(String.format("pets.%s.levels.%s.bonus", key, level))
                 );
                 levels.put(petLevel.getLevel(), petLevel);

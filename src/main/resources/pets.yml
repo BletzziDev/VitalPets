@@ -1,7 +1,7 @@
 pets:
   tiger:
     # Custom Model Name
-    custom_model: ""
+    custom_model: "tiger"
     # Name
     name: "&bMining Tiger"
     # Display Icon
@@ -27,17 +27,59 @@ pets:
     # Levels (Progressive order - Start in 2)
     levels:
       2:
-        # Blocks needed
-        blocks: 15000.0
+        # Upgrade Price
+        price: 15000.0
         # Bonus to be added to the percentage of powers
         bonus: 1.0
       3:
-        # Blocks needed
-        blocks: 30000.0
+        # Upgrade Price
+        price: 30000.0
         # Bonus to be added to the percentage of powers
         bonus: 2.0
       4:
-        # Blocks needed
-        blocks: 50000.0
+        # Upgrade Price
+        price: 50000.0
+        # Bonus to be added to the percentage of powers
+        bonus: 5.0
+  dragon:
+    # Custom Model Name
+    custom_model: "wyvern"
+    # Name
+    name: "&dEnder Dragon"
+    # Display Icon
+    display:
+      # Display material
+      material: "http://textures.minecraft.net/texture/24e73adc6be7922d0d6287192b48b4afcd6d72207773d0b15a1903b051ec0c22"
+      # Display name
+      name: "&dEnder Dragon"
+      # Display lore
+      lore:
+        - ""
+        - " &eThis pet give you &b+20% &ecrystals bonus."
+        - ""
+    # Pet Rarity
+    rarity: "common"
+    # Super Powers
+    powers:
+      tokens:
+        # Power Type
+        type: "CURRENCIES:TOKENS"
+        # Percentage
+        percentage: 15.0
+    # Levels (Progressive order - Start in 2)
+    levels:
+      2:
+        # Upgrade Price
+        price: 50000.0
+        # Bonus to be added to the percentage of powers
+        bonus: 1.0
+      3:
+        # Upgrade Price
+        price: 150000.0
+        # Bonus to be added to the percentage of powers
+        bonus: 2.0
+      4:
+        # Upgrade Price
+        price: 250000.0
         # Bonus to be added to the percentage of powers
         bonus: 5.0

@@ -86,14 +86,28 @@
             <artifactId>vitalcore</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>C:\Users\Rodrigo\vitalmc\assets\VitalCore-1.0.0.jar</systemPath>
+            <systemPath>C:\Users\Rodrigo\vitalmc\assets\VitalCore-1.0.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>placeholder.api</groupId>
+            <artifactId>papi</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:\Users\Rodrigo\vitalmc\assets\PlaceholderAPI-2.11.4.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.edseries</groupId>
             <artifactId>edprison</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>C:\Users\Rodrigo\vitalmc\assets\EdPrison4.6-HOTFIX2.jar</systemPath>
+            <systemPath>C:\Users\Rodrigo\vitalmc\assets\EdPrison.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.edseries</groupId>
+            <artifactId>edprivatemines</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:\Users\Rodrigo\vitalmc\assets\EdPrivateMines.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.vault</groupId>

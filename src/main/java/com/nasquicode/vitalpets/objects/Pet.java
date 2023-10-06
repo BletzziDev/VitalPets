@@ -2,16 +2,19 @@ package com.nasquicode.vitalpets.objects;
 
 import com.nasquicode.vitalpets.utils.Console;
 import lombok.Getter;
+import lombok.Setter;
 import net.advancedplugins.mobs.AdvancedMobsAPI;
 import net.advancedplugins.mobs.impl.customMobs.entityInstance.CustomEntityInstance;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+
 
 @Getter
 public class Pet {
     private PetType petType;
     private Player playerHolder;
+    @Setter
     private int level;
+    @Setter
     private double blocks_progress;
     private CustomEntityInstance customEntityInstance;
     public Pet(PetType petType, Player playerHolder, int level, double blocks_progress) {
@@ -29,8 +32,7 @@ public class Pet {
         customEntityInstance.getBaseEntity().setCustomNameVisible(true);
     }
     public void remove()  {
-        assert customEntityInstance != null;
-        Console.log("Pet.java debug 1");
+        if(customEntityInstance == null) return;
         customEntityInstance.kill();
         customEntityInstance.getBaseEntity().remove();
         customEntityInstance.remove();

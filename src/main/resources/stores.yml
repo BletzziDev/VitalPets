@@ -1,0 +1,168 @@
+currencies:
+  money:
+    name: "&aMoney"
+    provider: "%vault_eco_balance%"
+    set_command: "money set {player} {amount}"
+
+# You can create how many stores do you need
+stores:
+  # Store identifier
+  candies:
+    # Store open command
+    command: "candies"
+    menu:
+      # Menu size
+      size: 27
+      # Menu name
+      name: "Candy Store"
+    items:
+      carrot:
+        display_item:
+          # Display slot
+          slot: 10
+          # Display Material
+          material: "http://textures.minecraft.net/texture/334ec0c4d52ed1826b198247e7b95469916320d36d1f2727f482b75c4be9bd92"
+          # Display name
+          name: "&aCarrot Candy"
+          # Display lore
+          lore:
+            - ""
+            - " &eThis candy give your pet &a+1 level&e."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givecandy {player} carrot 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"
+      apple:
+        display_item:
+          # Display slot
+          slot: 13
+          # Display Material
+          material: "http://textures.minecraft.net/texture/d084f68029f6c381025ddb206b39dc36f460467a41348855bbe8599123a1901b"
+          # Display name
+          name: "&aApple Candy"
+          # Display lore
+          lore:
+            - ""
+            - " &eThis candy give your pet &a+3 levels&e."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givecandy {player} apple 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"
+      sour:
+        display_item:
+          # Display slot
+          slot: 16
+          # Display Material
+          material: "http://textures.minecraft.net/texture/c156cfcfbc9eff50eb24a3d4445c65d67e46ab051f427942eb62bf2da27333c"
+          # Display name
+          name: "&aSour Candy"
+          # Display lore
+          lore:
+            - ""
+            - " &eThis candy give your pet &a+10 levels&e."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givecandy {player} sour 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"
+  # Store identifier
+  boxes:
+    # Store open command
+    command: "boxes"
+    menu:
+      # Menu size
+      size: 27
+      # Menu name
+      name: "Box Store"
+    items:
+      common:
+        display_item:
+          # Display slot
+          slot: 10
+          # Display Material
+          material: "http://textures.minecraft.net/texture/73ac7aea402ce629a4833a45228df45a5062d112f0f826c3c343cf068091cbea"
+          # Display name
+          name: "&7Common Pet Box"
+          # Display lore
+          lore:
+            - ""
+            - " &eIn this pet box you can get a &7Common&e pet."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givebox {player} common 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"
+      rare:
+        display_item:
+          # Display slot
+          slot: 12
+          # Display Material
+          material: "http://textures.minecraft.net/texture/427957aedddc173c7294afda6e3fafca6cbc9c3198d0362e2eb316560b497755"
+          # Display name
+          name: "&bRare Pet Box"
+          # Display lore
+          lore:
+            - ""
+            - " &eIn this pet box you can get a &bRare&e pet."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givebox {player} rare 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"
+      epic:
+        display_item:
+          # Display slot
+          slot: 14
+          # Display Material
+          material: "http://textures.minecraft.net/texture/f4cabec18394f48191526d9059e458e0116fe84b79c645ca54649377b68f543b"
+          # Display name
+          name: "&dEpic Pet Box"
+          # Display lore
+          lore:
+            - ""
+            - " &eIn this pet box you can get a &dEpic&e pet."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givebox {player} epic 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"
+      legendary:
+        display_item:
+          # Display slot
+          slot: 16
+          # Display Material
+          material: "http://textures.minecraft.net/texture/916524b9de9a9e09921a3d427b94ab0642bf13ddd98bb53083404e0d45bb0f7c"
+          # Display name
+          name: "&6Legendary Pet Box"
+          # Display lore
+          lore:
+            - ""
+            - " &eIn this pet box you can get a &6Legendary&e pet."
+            - ""
+            - " &fPrice: &2$&a100"
+            - ""
+        commands:
+          - "pet givebox {player} legendary 1"
+        prices:
+          # Model: "currency_identifier,amount"
+          - "money,100.0"

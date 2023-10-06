@@ -1,13 +1,49 @@
 boxes:
   common:
     # Material
-    material: ""
+    material: "http://textures.minecraft.net/texture/73ac7aea402ce629a4833a45228df45a5062d112f0f826c3c343cf068091cbea"
     # Display name
-    name: "&7Common"
+    name: "&7Common Pet Box"
     # Display lore
     lore:
       - ""
       - " &eIn this pet box you can get a &7Common&e pet."
+      - ""
+    # Pets that can be earned in the box
+    pets: [ "tiger" ]
+  rare:
+    # Material
+    material: "http://textures.minecraft.net/texture/427957aedddc173c7294afda6e3fafca6cbc9c3198d0362e2eb316560b497755"
+    # Display name
+    name: "&bRare Pet Box"
+    # Display lore
+    lore:
+      - ""
+      - " &eIn this pet box you can get a &bRare&e pet."
+      - ""
+    # Pets that can be earned in the box
+    pets: [ "tiger" ]
+  epic:
+    # Material
+    material: "http://textures.minecraft.net/texture/f4cabec18394f48191526d9059e458e0116fe84b79c645ca54649377b68f543b"
+    # Display name
+    name: "&dEpic Pet Box"
+    # Display lore
+    lore:
+      - ""
+      - " &eIn this pet box you can get a &dEpic&e pet."
+      - ""
+    # Pets that can be earned in the box
+    pets: [ "tiger" ]
+  legendary:
+    # Material
+    material: "http://textures.minecraft.net/texture/916524b9de9a9e09921a3d427b94ab0642bf13ddd98bb53083404e0d45bb0f7c"
+    # Display name
+    name: "&6Legendary Pet Box"
+    # Display lore
+    lore:
+      - ""
+      - " &eIn this pet box you can get a &6Legendary&e pet."
       - ""
     # Pets that can be earned in the box
     pets: [ "tiger" ]

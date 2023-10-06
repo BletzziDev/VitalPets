@@ -32,7 +32,16 @@
     <orderEntry type="module-library">
       <library name="Maven: com.nasquicode:vitalcore:1.0.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../assets/VitalCore-1.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../assets/VitalCore-1.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: placeholder.api:papi:1.0.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../assets/PlaceholderAPI-2.11.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -41,7 +50,16 @@
     <orderEntry type="module-library">
       <library name="Maven: com.edseries:edprison:1.0.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../assets/EdPrison4.6-HOTFIX2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../assets/EdPrison.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.edseries:edprivatemines:1.0.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../assets/EdPrivateMines.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

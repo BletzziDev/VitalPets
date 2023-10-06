@@ -11,5 +11,6 @@ public class Constants {
     public static String candyFile = "candies.yml";
     public static String boxFile = "boxes.yml";
     public static String menuFile = "menus.yml";
+    public static String storeFile = "stores.yml";
     public static List<String> inventoryNames = new ArrayList<>();
 }

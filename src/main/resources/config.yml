@@ -2,3 +2,5 @@
 storage:
   # VitalCore Database Identifier
   database-identifier: ""
+
+pet_upgrade_edp_currency: "crystals"

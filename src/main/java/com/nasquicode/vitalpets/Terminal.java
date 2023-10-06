@@ -2,16 +2,15 @@ package com.nasquicode.vitalpets;
 
 import com.nasquicode.vitalcore.bukkit.api.VitalCoreAPI;
 import com.nasquicode.vitalcore.bukkit.objects.Database;
+import com.nasquicode.vitalcore.bukkit.utils.Color;
 import com.nasquicode.vitalcore.bukkit.utils.CustomFileConfiguration;
+import com.nasquicode.vitalpets.commands.BoxCommand;
 import com.nasquicode.vitalpets.commands.PetCommand;
 import com.nasquicode.vitalpets.database.PetDAO;
-import com.nasquicode.vitalpets.listeners.CurrencyIncomeListener;
-import com.nasquicode.vitalpets.listeners.InventoryInteractionListener;
-import com.nasquicode.vitalpets.listeners.PlayerConnectionListener;
+import com.nasquicode.vitalpets.listeners.*;
 import com.nasquicode.vitalpets.mappers.*;
 import com.nasquicode.vitalpets.misc.Constants;
-import com.nasquicode.vitalpets.objects.Pet;
-import com.nasquicode.vitalpets.objects.PlayerData;
+import com.nasquicode.vitalpets.objects.Store;
 import com.nasquicode.vitalpets.tasks.PetTeleportTask;
 import com.nasquicode.vitalpets.utils.Console;
 import org.bukkit.Bukkit;
@@ -31,6 +30,7 @@ public final class Terminal extends JavaPlugin {
     public static CustomFileConfiguration candyFile;
     public static CustomFileConfiguration boxFile;
     public static CustomFileConfiguration menuFile;
+    public static CustomFileConfiguration storeFile;
     public static Database database;
     public static PetDAO dao;
 
@@ -56,6 +56,8 @@ public final class Terminal extends JavaPlugin {
             Console.log(String.format("&eThe file &b%s &ehas been loaded.", Constants.boxFile));
             menuFile = new CustomFileConfiguration(Constants.menuFile, this);
             Console.log(String.format("&eThe file &b%s &ehas been loaded.", Constants.menuFile));
+            storeFile = new CustomFileConfiguration(Constants.storeFile, this);
+            Console.log(String.format("&eThe file &b%s &ehas been loaded.", Constants.storeFile));
             Console.log("&aAll files has been loaded.");
         } catch (IOException | InvalidConfigurationException e) {
             throw new RuntimeException(e);
@@ -80,17 +82,25 @@ public final class Terminal extends JavaPlugin {
         Console.log(String.format("&b%s &ecandies has been loaded.", String.valueOf(CandyMapper.getMapper().size())));
         BoxMapper.register();
         Console.log(String.format("&b%s &eboxes has been loaded.", String.valueOf(BoxMapper.getMapper().size())));
+        StoreMapper.register();
+        Console.log(String.format("&b%s &estores has been loaded.", String.valueOf(StoreMapper.getMapper().size())));
         Console.log("&aAll plugin objects has been loaded.");
 
         Constants.inventoryNames.clear();
-        Constants.inventoryNames.add(menuFile.getString("main.name"));
-        Constants.inventoryNames.add(menuFile.getString("pet_storage.name"));
+        Constants.inventoryNames.add(Color.string(menuFile.getString("main.name")));
+        Constants.inventoryNames.add(Color.string(menuFile.getString("pet_storage.name")));
+        Constants.inventoryNames.add(Color.string(menuFile.getString("candy_use_menu.name")));
+        Constants.inventoryNames.add(Color.string(menuFile.getString("pet_upgrade_menu.name")));
+        for(Store store : StoreMapper.getMapper().values()) Constants.inventoryNames.add(store.getMenuTitle());
 
         Console.log("&eRegistering commands and listeners...");
         getCommand("pet").setExecutor(new PetCommand());
+        getCommand("boxes").setExecutor(new BoxCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryInteractionListener(), this);
-        Bukkit.getPluginManager().registerEvents(new CurrencyIncomeListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PetPowerListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerInteractionListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerCommandListener(), this);
         Console.log("&aAll commands and listeners has been registered.");
 
         new PetTeleportTask().runTaskTimer(this, 100L, 100L);

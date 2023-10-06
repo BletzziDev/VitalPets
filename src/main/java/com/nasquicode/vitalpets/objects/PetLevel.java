@@ -6,6 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor @Getter
 public class PetLevel {
     private int level;
-    private double blocks;
+    private double price;
     private double bonus;
 }

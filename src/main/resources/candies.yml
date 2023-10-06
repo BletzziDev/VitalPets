@@ -1,7 +1,7 @@
 candies:
   carrot:
     # Candy material
-    material: ""
+    material: "http://textures.minecraft.net/texture/334ec0c4d52ed1826b198247e7b95469916320d36d1f2727f482b75c4be9bd92"
     # Candy name
     name: "&aCarrot Candy"
     # Candy lore
@@ -11,3 +11,27 @@ candies:
       - ""
     # Levels amount
     levels: 1
+  apple:
+    # Candy material
+    material: "http://textures.minecraft.net/texture/d084f68029f6c381025ddb206b39dc36f460467a41348855bbe8599123a1901b"
+    # Candy name
+    name: "&aApple Candy"
+    # Candy lore
+    lore:
+      - ""
+      - " &eThis candy give your pet &a+3 levels&e."
+      - ""
+    # Levels amount
+    levels: 3
+  sour:
+    # Candy material
+    material: "http://textures.minecraft.net/texture/c156cfcfbc9eff50eb24a3d4445c65d67e46ab051f427942eb62bf2da27333c"
+    # Candy name
+    name: "&aSour Candy"
+    # Candy lore
+    lore:
+      - ""
+      - " &eThis candy give your pet &a+10 levels&e."
+      - ""
+    # Levels amount
+    levels: 10

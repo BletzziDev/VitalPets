@@ -27,17 +27,53 @@ pet_storage:
     equip_pet_lore:
       - ""
       - " &fLevel: &b{level}"
-      - " &fProgress: &b{block_progress}/{block_goal}"
       - ""
       - " &7Left click to equip your pet in first slot."
       - " &7Right click to equip your pet in second slot."
       - " &7Press Q to equip your pet in third slot."
+      -
+      - "&bPress Shift + Click to upgrade."
       - ""
     equipped_pet_lore:
       - ""
       - " &fLevel: &b{level}"
-      - " &fProgress: &b{block_progress}/{block_goal}"
       - ""
       - " &aThis pet is already equipped!"
       - " &7Left click to unequip"
       - ""
+      - "&bPress Shift + Click to upgrade."
+      - ""
+pet_box_preview:
+  size: 54
+  name: "{box_name}"
+  pet_slots: [10,11,12,13,14,15,16,19,20,21,22,23,24,25]
+candy_use_menu:
+  size: 54
+  name: "Choose a pet to upgrade"
+  pet_slots: [ 10,11,12,13,14,15,16,19,20,21,22,23,24,25 ]
+  upgrade_lore:
+    - ""
+    - " &7Click to evolute this pet. "
+    - ""
+pet_upgrade_menu:
+  size: 27
+  name: "Upgrade your pet"
+  items:
+    pet:
+      slot: 10
+      material: "{pet_skull}"
+      name: "{pet_name}"
+      lore:
+        - ""
+        - " &fLevel: &b{level}"
+        - " &fUpgrade cost: &b{price} crystals"
+        - ""
+    evolute:
+      slot: 16
+      material: "NETHER_STAR:0"
+      name: "&aUpgrade pet"
+      lore:
+        - ""
+        - " &7Click to upgrade your pet"
+        - " &7Price: &b{price} crystals&7."
+        - ""

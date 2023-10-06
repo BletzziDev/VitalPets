@@ -29,18 +29,16 @@ public class PetStorageMenu {
                 ItemMeta meta = stack.getItemMeta();
                 meta.setDisplayName(pet.getPetType().getName());
 
-                if(playerData.getEquippedPetsStringList().contains(pet.getPetType().getKey())) {
-                    Console.log("PetStorageMenu.java Debug 1");
+                if (playerData.getEquippedPetsStringList().contains(pet.getPetType().getKey())) {
                     List<String> lore = Color.list(Terminal.menuFile.getStringList("pet_storage.items.equipped_pet_lore"));
-                    for(int i=0;i<lore.size();i++) {
-                        lore.set(i,lore.get(i).replace("{level}",String.valueOf(pet.getLevel())).replace("{block_progress}",String.valueOf(pet.getBlocks_progress())).replace("{block_goal}",String.valueOf(pet.getPetType().getLevels().get(pet.getLevel()+1).getBlocks())));
+                    for (int i = 0; i < lore.size(); i++) {
+                        lore.set(i, lore.get(i).replace("{level}", String.valueOf(pet.getLevel())));
                     }
                     meta.setLore(lore);
-                }else {
-                    Console.log("PetStorageMenu.java Debug 2");
+                } else {
                     List<String> lore = Color.list(Terminal.menuFile.getStringList("pet_storage.items.equip_pet_lore"));
-                    for(int i=0;i<lore.size();i++) {
-                        lore.set(i,lore.get(i).replace("{level}",String.valueOf(pet.getLevel())).replace("{block_progress}",String.valueOf(pet.getBlocks_progress())).replace("{block_goal}",String.valueOf(pet.getPetType().getLevels().get(pet.getLevel()+1).getBlocks())));
+                    for (int i = 0; i < lore.size(); i++) {
+                        lore.set(i, lore.get(i).replace("{level}", String.valueOf(pet.getLevel())));
                     }
                     meta.setLore(lore);
                 }

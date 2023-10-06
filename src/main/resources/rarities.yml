@@ -1,3 +1,9 @@
 rarities:
   common:
     name: "&7Common"
+  rare:
+    name: "&bRare"
+  epic:
+    name: "&dEpic"
+  legendary:
+    name: "&6Legendary"
